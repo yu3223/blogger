@@ -70,7 +70,6 @@ class TodoListsTest extends DatabaseTestCase
         $results->assertStatus(200);
 
         $returnData = json_decode($results->getJSON());
-        // var_dump($returnData);
 
         $excepted = [
             "title"     => "Example Title",
