@@ -9,13 +9,19 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.0"
+
       - name: Copy env file
         run: cp app/env .env
 
+      - name: Install Composer
+        run: sudo apt-get update && sudo apt-get install -y composer
+
       - name: Install dependencies
-        uses: php-actions/composer@v6
-        with:
-          command: composer install
+        run: composer install
 
       - name: PHPUnit Tests
         uses: php-actions/phpunit@master
