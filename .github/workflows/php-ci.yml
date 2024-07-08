@@ -21,7 +21,7 @@ jobs:
         run: sudo apt-get update && sudo apt-get install -y composer
 
       - name: Install dependencies
-        uses: php-actions/composer@v6
+        working-directory: ./app
         with:
             command: composer install
         
