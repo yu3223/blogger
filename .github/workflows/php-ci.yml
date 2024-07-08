@@ -27,11 +27,10 @@ jobs:
 
       - name: PHPUnit Tests
         uses: php-actions/phpunit@master
-        run: cd ..
         env:
           TEST_NAME: Scarlett
         with:
           version: 9.6
-          bootstrap: vendor/autoload.php
+          bootstrap: ./vendor/autoload.php
           configuration: app/tests/phpunit.xml
           args: --coverage-text
