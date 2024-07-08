@@ -4,7 +4,7 @@
          stopOnFailure="false">
     <testsuites>
         <testsuite name="Application Test Suite">
-            <directory>./tests</directory>
+            <directory>Api/V1</directory>
         </testsuite>
     </testsuites>
 </phpunit>
