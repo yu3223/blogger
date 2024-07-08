@@ -21,11 +21,12 @@ jobs:
         run: sudo apt-get update && sudo apt-get install -y composer
 
       - name: Install dependencies
-        run: composer install
-        working-directory: ./app
-
+        run: |
+          cd app
+          composer install
+        
       - name: PHPUnit Tests
-        run: cd ..
+        uses: php-actions/phpunit@master
         env:
           TEST_NAME: Scarlett
         with:
