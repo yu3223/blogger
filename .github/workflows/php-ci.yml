@@ -25,7 +25,6 @@ jobs:
         working-directory: ./app
 
       - name: PHPUnit Tests
-        uses: php-actions/phpunit@master
         run: cd ..
         env:
           TEST_NAME: Scarlett
