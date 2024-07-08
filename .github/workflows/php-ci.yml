@@ -1,12 +1,6 @@
 name: Backend PHP CI
 
-on:
-  push:
-    paths:
-      - app/**
-  pull_request:
-    paths:
-      - app/**
+on: [push, pull_request]
 
 jobs:
   build-test:
@@ -27,13 +21,13 @@ jobs:
         run: sudo apt-get update && sudo apt-get install -y composer
 
       - name: Install dependencies
-        uses: php-actions/composer@v6
-        working-directory: ./app
-        with:
-            command: composer install
+        run: |
+          cd app
+          composer install
 
       - name: PHPUnit Tests
         uses: php-actions/phpunit@master
+        run: cd ..
         env:
           TEST_NAME: Scarlett
         with:
