@@ -17,11 +17,12 @@ jobs:
       - name: Copy env file
         run: cp app/env .env
 
-      - name: Install Composer
-        run: sudo apt-get update && sudo apt-get install -y composer
-
       - name: Install dependencies
-        run: composer install
+        uses: php-actions/composer@v6
+        working-directory: ./app
+        with:
+            command: composer install
+
 
       - name: PHPUnit Tests
         uses: php-actions/phpunit@master
