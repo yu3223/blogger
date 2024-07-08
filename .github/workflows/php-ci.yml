@@ -30,6 +30,6 @@ jobs:
           TEST_NAME: Scarlett
         with:
           version: 9.6
-          bootstrap: vendor/autoload.php
+          bootstrap: app/vendor/autoload.php
           configuration: app/tests/phpunit.xml
           args: --coverage-text
